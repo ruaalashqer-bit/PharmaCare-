@@ -1,0 +1,215 @@
+/* ==========================
+   Reset & Base Styles
+========================== */
+
+/* Apply general styles for the whole website*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family :Arial, sans-serif;
+}
+/* General page styling */
+body {
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+/* ==========================
+   Navigation Bar
+========================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0f2f1;
+    padding: 10px 20px;
+}
+
+nav h2 {
+    color: #00796b;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #00796b;
+}
+
+/* ==========================
+   Hero Sections
+========================== */
+.hero,
+.inventory-hero,
+.expiry-hero {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f1f8e9;
+}
+
+.hero img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+
+
+}
+
+/* ==========================
+   Dashboard Cards (index.html)
+========================== */
+.dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #b2dfdb;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #5abdb1;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #42a090;
+}
+
+/* ==========================
+   Inventory Table (inventory.html)
+========================== */
+.inventory-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 04px 10px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-table th,
+.inventory-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+.inventory-table tr:hover{
+    background-color: #f1f8e9;
+}
+
+.in-stock {
+    background-color: #d4edda;
+    color: #2c8641;
+    font-weight: 600;
+}
+
+.out-stock {
+    background-color: #ffcdd2;
+    color: #923838;
+    font-weight: 600;
+}
+
+/* ==========================
+   Expired Medicines Grid (expiry.html)
+========================== */
+.expired-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.expired-card {
+    background-color: #ffe0b2;
+    /* أصفر تنبيه */
+    border: 2px solid #ff9800;
+    /* برتقالي */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.expired-card h3 {
+    color: #d32f2f;
+    /* أحمر */
+    text-decoration: line-through;
+    /* خط مشطوب */
+    margin-bottom: 10px;
+}
+
+.expired-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.status-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ==========================
+   Responsive Design
+========================== */
+@media (max-width: 600px) {
+    .dashboard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inventory-table table,
+    .inventory-table thead,
+    .inventory-table tbody,
+    .inventory-table th,
+    .inventory-table td,
+    .inventory-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .inventory-table tr {
+        margin-bottom: 15px;
+    }
+
+    .expired-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.in-stock td:nth-child(3),.out-stock td:nth-child(3){
+
+    font-weight: bold;
+}
